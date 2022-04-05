@@ -12,6 +12,8 @@ app.UseSwagger();
 
 app.MapGet("/", () => ">>> API Online <<<");
 
+app.MapGet("health_check", () => "{\"status\": \"live\"}");
+
 app.MapPost("/Soma", (CalculoVars calc) =>
 {
     return $"result = {calc.x + calc.y}";
